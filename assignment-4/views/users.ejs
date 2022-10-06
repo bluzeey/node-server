@@ -8,9 +8,11 @@
 </head>
 <body>
     <h1>This is the <%= pageTitle %></h1>
-    <% if(users.length){ %>
+    <% if (userList.length > 0){ %>
         <ul>
-            <% users.map(user=><li>{user}</li>) %> 
+            <% for (let user of userList){ %>
+            <li><%= user  %></li> 
+            <% } %> 
         </ul>
     <% } else {%>
         <p>There are no users</p>
