@@ -47,17 +47,15 @@ module.exports = class Product {
     });
   }
   
-  delete(){
+  static deleteById(id){
     getProductsFromFile(products => {
-      if (this.id) {
-        const existingProductIndex = products.findIndex(
-          prod => prod.id === this.id
-        );
-        const Products = products.filter((_,index)=>index!=existingProductIndex)
-        fs.writeFile(p, JSON.stringify(Products), err => {
-          console.log(err);
-        });
-      }
+      const updatedProducts = products.filter(p => p.id !== id);
+      fs.writeFile(p,JSON.stringify(UpdatedProducts), err =>{
+        if(!err){
+          
+        }
+        console.log(err)
+      })
     });
   }
 
